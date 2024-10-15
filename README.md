@@ -51,6 +51,7 @@ Os principais riscos relacionados à devolução de produtos incluem:
 - Atrasos ou erros nos reembolsos.
 
 ## Componentes da arquitetura:
+![Arquitetura de Aplicação - Visão Geral (1)](https://github.com/user-attachments/assets/51d6dc72-3e2f-4bfb-9529-59d5cb8e48bf)
 
 - **Autoatendimento (Totem de Loja)**: Processa devoluções diretamente nas lojas físicas.
 - **ERP Frente de Loja**: Sincronizado com o ERP Central para atualizar o estoque.
