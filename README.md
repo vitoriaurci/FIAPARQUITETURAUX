@@ -85,10 +85,54 @@ Os principais riscos relacionados à devolução de produtos incluem:
 - **Desacoplamento através de APIs**: Facilita a troca de sistemas de terceiros.
 - **Processamento assíncrono**: Permite operações contínuas, mesmo com algumas operações em andamento.
 
+## Qual é o Metamodelo?
+
+O metamodelo utilizado é baseado em uma **Arquitetura Orientada a Serviços (SOA)**. Isso significa que os componentes do sistema são modelados como serviços independentes que se comunicam entre si, principalmente por meio de APIs e eventos. Esse metamodelo permite flexibilidade e escalabilidade na arquitetura, garantindo que o sistema seja modular e de fácil manutenção.
+
+## Pode ser discernido no diagrama único?
+
+Sim, o metamodelo pode ser discernido no diagrama único. A arquitetura é construída com base em componentes desacoplados que se comunicam via APIs e eventos. A presença de serviços como ERP Central, ERP Frente de Loja, Plataforma de Eventos e API Gateway reflete o uso de um metamodelo SOA, onde cada serviço tem sua função específica e pode ser escalado ou alterado independentemente dos outros.
+
+## O diagrama está completo?
+
+O diagrama fornece uma visão clara dos principais componentes e suas interações, mas ainda poderia ser complementado com mais detalhes sobre fluxos específicos de dados e interações entre os módulos. Por exemplo, a interação com sistemas externos e o detalhamento de como o **Motor de Processamento de Imagens** valida as devoluções poderia ser mais explícito. Portanto, enquanto está claro e funcional, alguns detalhes adicionais poderiam enriquecer o entendimento.
+
+## Poderia ser simplificado e ainda assim ser eficaz?
+
+Sim, o diagrama poderia ser simplificado para focar nos principais componentes e seus fluxos mais críticos, como os processos de devolução, sincronização de estoque e reembolso. A remoção de detalhes menos críticos ou secundários poderia tornar o diagrama mais direto e fácil de entender, sem perder sua eficácia.
+
+## Houve alguma discussão importante que vocês tiveram como equipe?
+
+Uma discussão importante na equipe envolveu a **sincronização de estoque** entre as lojas físicas e o ERP Central. A equipe se preocupou com os possíveis problemas de inconsistência entre o estoque disponível nas lojas e o estoque registrado no sistema centralizado, especialmente durante o processo de devoluções. Foi necessário chegar a um consenso sobre como garantir a consistência e a atualização em tempo real.
+
+## Que decisões sua equipe teve dificuldade para tomar?
+
+A equipe teve dificuldade em decidir sobre a **integração do Gateway de Pagamentos** para reembolsos. A integração com sistemas de terceiros gerou incertezas, principalmente em relação à segurança dos dados financeiros dos clientes e à eficiência no processamento de reembolsos.
+
+## Que decisões foram tomadas sob incerteza?
+
+A decisão de **utilizar a Plataforma de Eventos** para coordenar as devoluções e o processamento assíncrono foi tomada sob incerteza. Embora o uso de eventos traga benefícios de desempenho e flexibilidade, houve receio quanto ao risco de atrasos ou falhas na comunicação entre os sistemas, especialmente em situações de alta demanda.
+
+## Houve algum ponto de decisão sem retorno que o forçou a desistir de uma determinada escolha?
+
+Sim, o ponto de não retorno foi a decisão de usar o **Motor de Processamento de Imagens** para validar as devoluções online. A equipe considerou outras abordagens, como uma validação manual, mas devido ao volume de devoluções e à necessidade de automação, foi decidido que a validação automatizada seria o melhor caminho. Após essa decisão, não havia como voltar para o processo manual sem comprometer a eficiência da operação.
+
+
 ## Arquiteturas no padrão C4:
 
 1. **Nível Contexto**: Visão geral de como o sistema interage com o ambiente externo.
+![undefined](https://github.com/user-attachments/assets/9d524ff3-1ced-47ba-a35b-51f4fe7434eb)
+
 2. **Nível Container**: Mostra os principais contêineres (sistemas e serviços) envolvidos.
+![undefined](https://github.com/user-attachments/assets/56aa3af1-64e0-4647-8418-ac517dc84dad)
+
 3. **Nível Componente**: Detalha os componentes internos de cada contêiner.
+- **E-commerce**:
+![undefined (1)](https://github.com/user-attachments/assets/a7f5a4ce-ce0b-42da-979b-68d1e54a8cf4)
+- **Auto Atendimento**:
+![undefined (2)](https://github.com/user-attachments/assets/66894129-e6d9-4e2c-9e8f-6aaeea6b22e0)
+- **ERP Frente de Loja**:
+![undefined (3)](https://github.com/user-attachments/assets/fd19b52e-3dc5-40d3-bc41-49fe32ca1230)
+
 
 
